@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FunAdda | Play together · Win together · Fun Forever</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta name="description"
+    content="FunAdda is a free, offline party game app for Android with Truth or Dare, Charades, Would You Rather, Truth or Bluff and Never Have I Ever. No ads, no sign-up.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #03000f;
+      --bg2: #0b0620;
+      --card: #100a2a;
+      --line: #2a1f55;
+      --ink: #f4f1ff;
+      --muted: #b9b2d9;
+      --cyan: #00f5ff;
+      --pink: #ff00ff;
+      --grad: linear-gradient(90deg, #00f5ff, #ff00ff)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 76px
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      * {
+        animation: none !important;
+        transition: none !important
+      }
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+      -webkit-text-size-adjust: 100%
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+      line-height: 1.1;
+      margin: 0;
+      letter-spacing: -.01em
+    }
+
+    a {
+      color: var(--cyan);
+      text-underline-offset: 3px
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid var(--pink);
+      outline-offset: 3px;
+      border-radius: 6px
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    section {
+      padding: 72px 0
+    }
+
+    .kicker {
+      color: var(--cyan);
+      font-weight: 700;
+      font-size: .95rem;
+      margin: 0 0 10px
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800
+    }
+
+    .lead {
+      color: var(--muted);
+      max-width: 640px;
+      margin: 14px 0 0;
+      font-size: 1.08rem
+    }
+
+    /* top bar */
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(3, 0, 15, .88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .top .wrap {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      height: 64px
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Baloo 2", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--ink);
+      text-decoration: none
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+      border-radius: 8px;
+      object-fit: contain
+    }
+
+    .top nav {
+      margin-left: auto;
+      display: flex;
+      gap: 6px;
+      align-items: center
+    }
+
+    .top nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: .95rem
+    }
+
+    .top nav a:hover {
+      color: var(--ink);
+      background: var(--card)
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 13px 22px;
+      transition: transform .15s
+    }
+
+    .btn:hover {
+      transform: translateY(-2px)
+    }
+
+    .btn-main {
+      background: var(--grad);
+      color: #03000f;
+      font-size: 1.05rem
+    }
+
+    .btn-sm {
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-size: .92rem
+    }
+
+    .top nav a.btn-main {
+      color: #03000f;
+      padding: 9px 16px
+    }
+
+    .pi {
+      width: 22px;
+      height: 22px
+    }
+
+    @media (max-width:760px) {
+      .top nav a:not(.btn) {
+        display: none
+      }
+    }
+
+    /* hero */
+    .hero {
+      padding: 56px 0 64px;
+      background: radial-gradient(60% 60% at 80% 20%, rgba(255, 0, 255, .18), transparent 70%), radial-gradient(50% 60% at 10% 90%, rgba(0, 245, 255, .14), transparent 70%)
+    }
+
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 40px;
+      align-items: center
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 6vw, 3.7rem);
+      font-weight: 800
+    }
+
+    .hero h1 span {
+      display: block
+    }
+
+    .hero h1 .c {
+      color: var(--cyan)
+    }
+
+    .hero h1 .p {
+      color: var(--pink)
+    }
+
+    .hero p.sub {
+      font-size: 1.18rem;
+      color: var(--muted);
+      margin: 20px 0 28px;
+      max-width: 520px
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center
+    }
+
+    .qrbox {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 10px 16px 10px 10px
+    }
+
+    .qrbox .q {
+      width: 84px;
+      height: 84px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 8px;
+      flex: none
+    }
+
+    .qrbox .q svg {
+      width: 100%;
+      height: 100%;
+      display: block
+    }
+
+    .qrbox p {
+      margin: 0;
+      font-size: .9rem;
+      line-height: 1.35;
+      color: var(--muted)
+    }
+
+    .qrbox strong {
+      color: var(--ink);
+      display: block;
+      font-size: 1rem
+    }
+
+    .badges {
+      list-style: none;
+      padding: 0;
+      margin: 26px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      color: var(--muted);
+      font-size: .95rem;
+      font-weight: 600
+    }
+
+    .badges li::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      margin-right: 8px
+    }
+
+    .heroart {
+      position: relative
+    }
+
+    .heroart img {
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      box-shadow: 0 0 60px rgba(255, 0, 255, .28), 0 0 30px rgba(0, 245, 255, .2);
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+      animation: glow 5s ease-in-out infinite alternate
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 40px rgba(255, 0, 255, .2), 0 0 20px rgba(0, 245, 255, .15)
+      }
+
+      to {
+        box-shadow: 0 0 80px rgba(255, 0, 255, .38), 0 0 40px rgba(0, 245, 255, .3)
+      }
+    }
+
+    @media (max-width:820px) {
+      .hero .wrap {
+        grid-template-columns: 1fr
+      }
+
+      .heroart {
+        order: -1
+      }
+
+      .heroart img {
+        max-width: 260px
+      }
+    }
+
+    /* stats */
+    .stats {
+      background: var(--bg2);
+      border-block: 1px solid var(--line);
+      padding: 0
+    }
+
+    .stats ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr)
+    }
+
+    .stats li {
+      padding: 26px 16px;
+      text-align: center;
+      border-right: 1px solid var(--line)
+    }
+
+    .stats li:last-child {
+      border-right: 0
+    }
+
+    .stats b {
+      display: block;
+      font-family: "Baloo 2", system-ui, sans-serif;
+      font-size: 2.1rem;
+      line-height: 1;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent
+    }
+
+    .stats span {
+      color: var(--muted);
+      font-size: .92rem
+    }
+
+    @media (max-width:640px) {
+      .stats ul {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .stats li:nth-child(2) {
+        border-right: 0
+      }
+
+      .stats li:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line)
+      }
+    }
+
+    /* games */
+    .games {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 38px
+    }
+
+    .game {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column
+    }
+
+    .game img {
+      width: 100%;
+      aspect-ratio: 9/5;
+      object-fit: contain;
+      background: var(--card)
+    }
+
+    .gbody {
+      padding: 22px 24px 26px
+    }
+
+    .game h3 {
+      font-size: 1.7rem;
+      font-weight: 800
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      margin: 6px 0 10px;
+      color: var(--cyan);
+      font-weight: 700;
+      font-size: .9rem
+    }
+
+    .gbody p {
+      margin: 8px 0
+    }
+
+    .taglabel {
+      color: var(--muted);
+      font-size: .85rem;
+      margin: 14px 0 8px !important;
+      font-weight: 700
+    }
+
+    .chips {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .chips li {
+      border: 1px solid var(--line);
+      background: var(--bg2);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: .85rem;
+      color: var(--ink)
+    }
+
+    @media (max-width:820px) {
+      .games {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* features */
+    .features {
+      background: var(--bg2);
+      border-block: 1px solid var(--line)
+    }
+
+    .fgrid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 38px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden
+    }
+
+    .feat {
+      padding: 24px 22px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--card)
+    }
+
+    .feat:nth-child(4n) {
+      border-right: 0
+    }
+
+    .feat:nth-child(n+5) {
+      border-bottom: 0
+    }
+
+    .feat h3 {
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-bottom: 6px
+    }
+
+    .feat p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    @media (max-width:900px) {
+      .fgrid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .feat:nth-child(4n) {
+        border-right: 1px solid var(--line)
+      }
+
+      .feat:nth-child(2n) {
+        border-right: 0
+      }
+
+      .feat:nth-child(n+5) {
+        border-bottom: 1px solid var(--line)
+      }
+
+      .feat:nth-child(n+7) {
+        border-bottom: 0
+      }
+    }
+
+    @media (max-width:520px) {
+      .fgrid {
+        grid-template-columns: 1fr
+      }
+
+      .feat {
+        border-right: 0 !important;
+        border-bottom: 1px solid var(--line) !important
+      }
+
+      .feat:last-child {
+        border-bottom: 0 !important
+      }
+    }
+
+    /* steps */
+    .steps {
+      counter-reset: s;
+      list-style: none;
+      padding: 0;
+      margin: 38px 0 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px
+    }
+
+    .steps li {
+      counter-increment: s;
+      position: relative;
+      padding-top: 58px
+    }
+
+    .steps li::before {
+      content: counter(s);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--grad);
+      color: #03000f;
+      font-family: "Baloo 2", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      display: grid;
+      place-items: center
+    }
+
+    .steps h3 {
+      font-size: 1.25rem;
+      margin-bottom: 6px
+    }
+
+    .steps p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    @media (max-width:820px) {
+      .steps {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media (max-width:480px) {
+      .steps {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* faq */
+    .faq {
+      max-width: none;
+      margin-top: 34px
+    }
+
+    details {
+      border-bottom: 1px solid var(--line)
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 18px 34px 18px 0;
+      font-weight: 700;
+      font-size: 1.08rem;
+      position: relative
+    }
+
+    summary::-webkit-details-marker {
+      display: none
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.6rem;
+      color: var(--cyan);
+      font-weight: 400
+    }
+
+    details[open] summary::after {
+      content: "\2212"
+    }
+
+    details p {
+      margin: 0 0 18px;
+      color: var(--muted)
+    }
+
+    /* download */
+    .download {
+      background: radial-gradient(70% 90% at 50% 100%, rgba(255, 0, 255, .22), transparent 70%), var(--bg2);
+      border-top: 1px solid var(--line);
+      text-align: center
+    }
+
+    .download h2 {
+      font-size: clamp(2.2rem, 6vw, 3.6rem)
+    }
+
+    .download .lead {
+      margin-inline: auto
+    }
+
+    .dl {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 34px;
+      margin-top: 36px
+    }
+
+    .bigqr {
+      background: #fff;
+      border-radius: 22px;
+      padding: 14px;
+      width: 196px;
+      height: 196px
+    }
+
+    .bigqr svg {
+      width: 100%;
+      height: 100%;
+      display: block
+    }
+
+    .dlr {
+      text-align: left;
+      max-width: 340px
+    }
+
+    .dlr p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    .dlr .link {
+      word-break: break-all;
+      font-size: .85rem
+    }
+
+    @media (max-width:640px) {
+      .dlr {
+        text-align: center
+      }
+    }
+
+    /* contact & footer */
+    .contact {
+      padding: 56px 0;
+      text-align: center;
+      border-top: 1px solid var(--line)
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin: 10px auto 0;
+      max-width: 560px
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 44px;
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    footer .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px
+    }
+
+    footer a {
+      color: var(--ink)
+    }
+
+    footer small {
+      display: block;
+      margin-top: 18px;
+      line-height: 1.55;
+      color: #8c85b0
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="logo" href="#top"><img src="assets/logo.png" alt="FunAdda logo" width="914" height="156">FunAdda</a>
+      <nav aria-label="Main">
+        <a href="#games">Games</a><a href="#features">Features</a><a href="#how">How to play</a><a href="#faq">FAQ</a>
+        <a class="btn btn-main btn-sm" href="https://play.google.com/store/apps/details?id=com.madhuresh.funadda"
+          target="_blank" rel="noopener">Get the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <h1><span class="c">Play Together</span><span class="p">Win Together</span><span>Fun Forever</span></h1>
+          <p class="sub">FunAdda is a free party game app for Android with five crowd-pleasing games. Pass the phone,
+            pick a mode, and turn any get-together into game night.</p>
+          <div class="cta">
+            <a class="btn btn-main" href="https://play.google.com/store/apps/details?id=com.madhuresh.funadda"
+              target="_blank" rel="noopener"><svg class="pi" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 2.6v18.8c0 .5.5.8.9.5L21 12.5c.4-.3.4-.7 0-1L4.9 2.1c-.4-.3-.9 0-.9.5z"
+                  fill="currentColor" />
+              </svg><span>Get it on Google Play</span></a>
+            <div class="qrbox">
+              <img class="q" src="assets/funadda-play-store-qr.png" alt="QR code linking to FunAdda on Google Play"
+                width="84" height="84">
+              <p><strong>Scan to download</strong>Point your phone camera here</p>
+            </div>
+          </div>
+          <ul class="badges">
+            <li>100% free</li>
+            <li>Works offline</li>
+            <li>No ads</li>
+            <li>No sign-up</li>
+          </ul>
+        </div>
+        <div class="heroart"><img src="assets/logo.png" alt="FunAdda logo banner" width="914" height="156"></div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="wrap">
+        <ul>
+          <li><b>5</b><span>party games</span></li>
+          <li><b>3,400+</b><span>prompts, words and dilemmas</span></li>
+          <li><b>2 to 10</b><span>players</span></li>
+          <li><b>0</b><span>ads or sign-ups</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="games">
+      <div class="wrap">
+        <p class="kicker">The games</p>
+        <h2>Five games. One phone.</h2>
+        <p class="lead">Every game has its own modes and categories, so there is something for every crowd, from family
+          evenings to late-night friend groups.</p>
+        <div class="games">
+          <article class="game">
+            <img src="assets/truthdare.webp" alt="Truth or Dare game artwork" width="1374" height="165" loading="lazy">
+            <div class="gbody">
+              <h3>Truth or Dare</h3>
+              <p class="meta"><span>2 to 6 players</span><span>684 truths and dares</span></p>
+              <p>Spin the bottle, then the chosen player picks: answer honestly or take the dare. Six moods, from easy
+                warm-ups to wild challenges.</p>
+              <p class="taglabel">Game modes</p>
+              <ul class="chips">
+                <li>Classic</li>
+                <li>Hot</li>
+                <li>Crazy</li>
+                <li>Couples</li>
+                <li>Party</li>
+                <li>Extreme</li>
+              </ul>
+            </div>
+          </article>
+          <article class="game">
+            <img src="assets/charades.webp" alt="Charades game artwork" width="1433" height="218" loading="lazy">
+            <div class="gbody">
+              <h3>Charades</h3>
+              <p class="meta"><span>2+ players, timed rounds</span><span>1,700+ words</span></p>
+              <p>Put the phone on your forehead and let your friends act, sing, or describe the word. Tap once when you
+                get it, twice to skip. Beat the clock (30 to 180 seconds).</p>
+              <p class="taglabel">Categories</p>
+              <ul class="chips">
+                <li>Movies</li>
+                <li>Songs</li>
+                <li>Celebrities</li>
+                <li>Animals</li>
+                <li>Sports</li>
+                <li>Food</li>
+                <li>Cartoons</li>
+                <li>Countries</li>
+                <li>Objects</li>
+                <li>Fruits</li>
+                <li>Brands</li>
+              </ul>
+            </div>
+          </article>
+          <article class="game">
+            <img src="assets/wouldyourather.webp" alt="Would You Rather game artwork" width="1478" height="201"
+              loading="lazy">
+            <div class="gbody">
+              <h3>Would You Rather</h3>
+              <p class="meta"><span>2 to 6 players</span><span>300+ dilemmas</span></p>
+              <p>Spin to pick who is in the hot seat, choose between two tough options, and watch the percentages
+                reveal.</p>
+              <p class="taglabel">Game modes</p>
+              <ul class="chips">
+                <li>Classic</li>
+                <li>Impossible</li>
+                <li>Funny</li>
+                <li>Couples</li>
+                <li>Party</li>
+                <li>Extreme</li>
+              </ul>
+            </div>
+          </article>
+          <article class="game">
+            <img src="assets/truthbluff.webp" alt="Truth or Bluff game artwork" width="1376" height="256"
+              loading="lazy">
+            <div class="gbody">
+              <h3>Truth or Bluff</h3>
+              <p class="meta"><span>3 to 10 players</span><span>11 categories of secret topics</span></p>
+              <p>Everyone gets a secret topic except the bluffer. Drop a one-word clue, compare everyone&rsquo;s words,
+                discuss, then vote to catch the bluffer.</p>
+              <p class="taglabel">Categories</p>
+              <ul class="chips">
+                <li>Objects</li>
+                <li>Animals</li>
+                <li>Food</li>
+                <li>Countries</li>
+                <li>Movies</li>
+                <li>Songs</li>
+                <li>Fruits</li>
+                <li>Brands</li>
+                <li>Sports</li>
+                <li>Celebrities</li>
+                <li>Cartoons</li>
+              </ul>
+            </div>
+          </article>
+          <article class="game">
+            <img src="assets/neverhaveiever.webp" alt="Never Have I Ever game artwork" width="1429" height="207"
+              loading="lazy">
+            <div class="gbody">
+              <h3>Never Have I Ever</h3>
+              <p class="meta"><span>2 to 6 players</span><span>700 statements</span></p>
+              <p>Spin, read the statement, and own up if you have done it. A great way to learn something new about your
+                friends.</p>
+              <p class="taglabel">Game modes</p>
+              <ul class="chips">
+                <li>Classic</li>
+                <li>Funny</li>
+                <li>Secrets</li>
+                <li>Couples</li>
+                <li>Party</li>
+                <li>Extreme</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="wrap">
+        <p class="kicker">Why FunAdda</p>
+        <h2>Simple, private, and always ready</h2>
+        <div class="fgrid">
+          <div class="feat">
+            <h3>Free to play</h3>
+            <p>Download and play. No paywalls, no in-app purchases.</p>
+          </div>
+          <div class="feat">
+            <h3>Works offline</h3>
+            <p>No Wi-Fi or mobile data needed. Perfect for road trips, parties, and power cuts.</p>
+          </div>
+          <div class="feat">
+            <h3>No sign-up</h3>
+            <p>No accounts, no logins. Open the app and start the fun.</p>
+          </div>
+          <div class="feat">
+            <h3>Zero ads</h3>
+            <p>No ads, no pop-ups, no interruptions between rounds.</p>
+          </div>
+          <div class="feat">
+            <h3>Your data stays yours</h3>
+            <p>Player names and settings are saved on your device only. We collect nothing.</p>
+          </div>
+          <div class="feat">
+            <h3>One phone, many players</h3>
+            <p>Pass the phone around the circle. No extra devices or downloads for your friends.</p>
+          </div>
+          <div class="feat">
+            <h3>Music and sound effects</h3>
+            <p>Lively background music and effects, each with its own on/off switch in Settings.</p>
+          </div>
+          <div class="feat">
+            <h3>Made for parties</h3>
+            <p>Bold neon look, quick rounds, and simple rules anyone can pick up in a minute.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="wrap">
+        <p class="kicker">How to play</p>
+        <h2>Ready in under a minute</h2>
+        <ol class="steps">
+          <li>
+            <h3>Install</h3>
+            <p>Download FunAdda from Google Play. No account needed.</p>
+          </li>
+          <li>
+            <h3>Pick a game</h3>
+            <p>Choose one of the five games on the home screen.</p>
+          </li>
+          <li>
+            <h3>Set it up</h3>
+            <p>Add player nicknames, then choose a mode or category (and a timer or player count where the game uses
+              one).</p>
+          </li>
+          <li>
+            <h3>Play</h3>
+            <p>Follow the on-screen prompts and pass the phone. Each game has a built-in instruction guide.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="faq" class="features">
+      <div class="wrap">
+        <p class="kicker">FAQ</p>
+        <h2>Questions, answered</h2>
+        <div class="faq">
+          <details>
+            <summary>Is FunAdda free?</summary>
+            <p>Yes. FunAdda is free to download and play. It has no ads and no in-app purchases.</p>
+          </details>
+          <details>
+            <summary>Do I need internet?</summary>
+            <p>No. All games work fully offline.</p>
+          </details>
+          <details>
+            <summary>Do I need to create an account?</summary>
+            <p>No. There are no accounts or logins. You only type nicknames for the players.</p>
+          </details>
+          <details>
+            <summary>How many players can play?</summary>
+            <p>Truth or Dare, Would You Rather, and Never Have I Ever support 2 to 6 players. Truth or Bluff supports 3
+              to 10. Charades is played by a group taking turns with the phone.</p>
+          </details>
+          <details>
+            <summary>Is my data collected?</summary>
+            <p>No. Player names and sound settings are stored only on your device. FunAdda has no ads, analytics, or
+              tracking. See the <a href="privacy-policy.html">Privacy Policy</a>.</p>
+          </details>
+          <details>
+            <summary>Is it suitable for kids?</summary>
+            <p>This game contains mature themes and is strictly reserved for players aged 18 and over.</p>
+          </details>
+          <details>
+            <summary>What if a dare feels unsafe or uncomfortable?</summary>
+            <p>Skip it. Every player can pass on any truth or dare at any time. Never do anything dangerous, illegal, or
+              that makes anyone uncomfortable. Players are responsible for their own actions, as explained in the Terms
+              &amp; Conditions.</p>
+          </details>
+          <details>
+            <summary>Which Android versions are supported?</summary>
+            <p>FunAdda runs on Android 7.0 (Nougat) and newer, on phones and tablets.</p>
+          </details>
+          <details>
+            <summary>How do I delete my saved player names?</summary>
+            <p>Tap the delete icon beside a name in the player list, or clear the app&rsquo;s data in your Android
+              settings.</p>
+          </details>
+          <details>
+            <summary>How do I send feedback or suggest a game?</summary>
+            <p>Email us at <a href="mailto:codermadhuresh1234@gmail.com">codermadhuresh1234@gmail.com</a>. We read
+              every message.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="download">
+      <div class="wrap">
+        <h2>Download FunAdda</h2>
+        <p class="lead">Free on Google Play for Android 7.0 and newer. Scan the code with your phone or tap the button.
+        </p>
+        <div class="dl">
+          <img class="bigqr" src="assets/funadda-play-store-qr.png" alt="QR code linking to FunAdda on Google Play"
+            width="196" height="196">
+          <div class="dlr">
+            <a class="btn btn-main" href="https://play.google.com/store/apps/details?id=com.madhuresh.funadda"
+              target="_blank" rel="noopener"><svg class="pi" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 2.6v18.8c0 .5.5.8.9.5L21 12.5c.4-.3.4-.7 0-1L4.9 2.1c-.4-.3-.9 0-.9.5z"
+                  fill="currentColor" />
+              </svg><span>Get it on Google Play</span></a>
+            <p>Or open this link on your phone:</p>
+            <p class="link"><a href="https://play.google.com/store/apps/details?id=com.madhuresh.funadda"
+                target="_blank" rel="noopener">https://play.google.com/store/apps/details?id=com.madhuresh.funadda</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="wrap">
+        <h2 style="font-size:1.9rem">Got feedback or a game idea?</h2>
+        <p>We would love to hear from you. Email <a
+            href="mailto:codermadhuresh1234@gmail.com">codermadhuresh1234@gmail.com</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <span>&copy; 2026 CoderMadhuresh. All rights reserved.</span>
+        <nav aria-label="Legal"><a href="privacy-policy.html">Privacy Policy</a><a
+            href="terms-and-conditions.html">Terms &amp; Conditions</a><a
+            href="mailto:codermadhuresh1234@gmail.com">Contact</a></nav>
+      </div>
+      <small>Google Play and the Google Play logo are trademarks of Google LLC. Movie, song, celebrity, and brand names
+        used in Charades and Truth or Bluff belong to their respective owners and appear only as gameplay words, with no
+        affiliation or endorsement implied.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq details').forEach(function (d) {
+      d.addEventListener('toggle', function () {
+        if (d.open) {
+          document.querySelectorAll('.faq details[open]').forEach(function (o) {
+            if (o !== d) o.removeAttribute('open')
+          })
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

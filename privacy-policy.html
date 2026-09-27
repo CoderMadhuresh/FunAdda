@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Privacy Policy | FunAdda</title>
+    <meta name="description"
+        content="FunAdda Privacy Policy: no accounts, no ads, no analytics. Player names and settings stay on your device.">
+    <meta name="robots" content="index,follow">
+    <!-- BEFORE PUBLISHING: (1) search for "[" and replace every yellow-highlighted placeholder; (2) find and replace YOUR-SITE-NAME with your Google Sites address name. -->
+    <style>
+        :root {
+            --bg: #fbfaff;
+            --surface: #ffffff;
+            --ink: #1b1733;
+            --muted: #5b5678;
+            --line: #e4e0f2;
+            --link: #6a00a8;
+            --accent1: #00c4d0;
+            --accent2: #d000d0;
+            --band: #03000f;
+            --band-ink: #f4f1ff;
+            --note-bg: #f1eeff;
+            --fill-bg: #fff3b0;
+            --fill-ink: #4a3b00
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0b0818;
+                --surface: #120e24;
+                --ink: #ebe8f8;
+                --muted: #a9a3c7;
+                --line: #2a2447;
+                --link: #7fe9f0;
+                --note-bg: #181334;
+                --fill-bg: #5a4a00;
+                --fill-ink: #fff3b0
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #0b0818;
+            --surface: #120e24;
+            --ink: #ebe8f8;
+            --muted: #a9a3c7;
+            --line: #2a2447;
+            --link: #7fe9f0;
+            --note-bg: #181334;
+            --fill-bg: #5a4a00;
+            --fill-ink: #fff3b0
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 1.25rem
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font: 17px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+            -webkit-text-size-adjust: 100%
+        }
+
+        a {
+            color: var(--link);
+            text-underline-offset: 2px
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--accent2);
+            outline-offset: 2px;
+            border-radius: 3px
+        }
+
+        .band {
+            background: var(--band);
+            color: var(--band-ink)
+        }
+
+        .band .in {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 2.25rem 1.25rem 2rem
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: .02em;
+            background: linear-gradient(90deg, #00f5ff, #ff00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block
+        }
+
+        .band h1 {
+            margin: .35rem 0 .5rem;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -.01em
+        }
+
+        .band p {
+            margin: 0;
+            color: #c9c3e6;
+            font-size: .95rem
+        }
+
+        .band .other {
+            margin-top: 1.1rem
+        }
+
+        .band .other a {
+            display: inline-block;
+            padding: .6rem 1.15rem;
+            margin: .25rem .5rem .25rem 0;
+            border: 1px solid rgba(0, 245, 255, .5);
+            border-radius: 999px;
+            background: rgba(0, 245, 255, .1);
+            color: #7fe9f0;
+            font-weight: 700;
+            font-size: .9rem;
+            text-decoration: none;
+            transition: background .15s ease, border-color .15s ease, transform .15s ease
+        }
+
+        .band .other a:hover {
+            background: rgba(0, 245, 255, .2);
+            border-color: var(--accent1)
+        }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem 4rem
+        }
+
+        .summary {
+            background: var(--note-bg);
+            border: 1px solid var(--line);
+            border-left: 5px solid var(--accent2);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 0 0 2rem
+        }
+
+        .summary h2 {
+            margin: .1rem 0 .5rem;
+            font-size: 1.1rem;
+            border: 0;
+            padding: 0
+        }
+
+        .summary ul {
+            margin: .25rem 0 0;
+            padding-left: 1.2rem
+        }
+
+        .summary li {
+            margin: .25rem 0
+        }
+
+        nav.toc {
+            border: 1px solid var(--line);
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 0 0 2.25rem
+        }
+
+        nav.toc h2 {
+            font-size: 1rem;
+            margin: 0 0 .5rem;
+            border: 0;
+            padding: 0
+        }
+
+        nav.toc ol {
+            margin: 0;
+            padding-left: 1.4rem;
+            columns: 2;
+            column-gap: 2rem;
+            font-size: .95rem
+        }
+
+        nav.toc li {
+            margin: .15rem 0;
+            break-inside: avoid
+        }
+
+        @media (max-width:620px) {
+            nav.toc ol {
+                columns: 1
+            }
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            line-height: 1.3;
+            margin: 2.5rem 0 .75rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--line)
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            margin: 1.5rem 0 .4rem
+        }
+
+        p {
+            margin: .65rem 0
+        }
+
+        ul,
+        ol {
+            margin: .6rem 0;
+            padding-left: 1.4rem
+        }
+
+        li {
+            margin: .3rem 0
+        }
+
+        .tablewrap {
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface)
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 560px;
+            font-size: .95rem
+        }
+
+        th,
+        td {
+            text-align: left;
+            vertical-align: top;
+            padding: .65rem .8rem;
+            border-bottom: 1px solid var(--line)
+        }
+
+        th {
+            font-weight: 700;
+            background: var(--note-bg)
+        }
+
+        tr:last-child td {
+            border-bottom: 0
+        }
+
+        .caps {
+            text-transform: none
+        }
+
+        .important {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-left: 5px solid var(--accent1);
+            border-radius: 8px;
+            padding: .85rem 1.1rem;
+            margin: 1rem 0
+        }
+
+        .important p:first-child {
+            margin-top: 0
+        }
+
+        .important p:last-child {
+            margin-bottom: 0
+        }
+
+        mark.fill {
+            background: var(--fill-bg);
+            color: var(--fill-ink);
+            padding: 0 .25em;
+            border-radius: 3px;
+            font-weight: 600
+        }
+
+        footer {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem 3rem;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: .9rem
+        }
+
+        @media print {
+            .band {
+                background: none;
+                color: #000;
+                border: 0
+            }
+
+            .band p,
+            .band .other {
+                color: #000
+            }
+
+            .brand {
+                color: #000;
+                background: none
+            }
+
+            nav.toc {
+                display: none
+            }
+
+            body {
+                font-size: 12pt
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="band">
+        <div class="in">
+            <span class="brand">FunAdda</span>
+            <h1>Privacy Policy</h1>
+            <p>Effective date: September 20, 2026. Applies to FunAdda version 1.0.0 and later.</p>
+            <p class="other"><a href="index.html">Back to FunAdda home</a><a
+                    href="terms-and-conditions.html">Read the Terms &amp; Conditions</a></p>
+        </div>
+    </header>
+    <main>
+
+        <aside class="summary" aria-label="Summary">
+            <h2>The short version</h2>
+            <ul>
+                <li><strong>FunAdda is intended for adults aged 18 and over only.</strong></li>
+                <li>FunAdda does <strong>not</strong> collect, transmit, sell, or share your personal information.</li>
+                <li>There are no accounts, no ads, no analytics, no tracking, and no in-app purchases.</li>
+                <li>The player names you type and your sound/music settings stay <strong>on your device only</strong>.
+                    You can delete them at any time. Internet access is used only for optional features like Share, Rate
+                    Us, and Feedback.</li>
+                <li>All games are played on a single device (pass-and-play). No gameplay data is sent to any server.
+                </li>
+            </ul>
+            <p style="margin:.75rem 0 0;font-size:.9rem;color:var(--muted)">This summary is for convenience. The full
+                policy below is what applies.</p>
+        </aside>
+        <nav class="toc" aria-label="Table of contents">
+            <h2>Contents</h2>
+            <ol>
+                <li><a href="#who-we-are">Who We Are and What This Policy Covers</a></li>
+                <li><a href="#what-we-dont-collect">Information We Do Not Collect</a></li>
+                <li><a href="#stored-on-device">Information Stored on Your Device</a></li>
+                <li><a href="#multiplayer">Multiplayer and Gameplay</a></li>
+                <li><a href="#sensors-permissions">Device Sensors, Permissions and Internet Access</a></li>
+                <li><a href="#third-parties">Third-Party Services and SDKs</a></li>
+                <li><a href="#feedback">Feedback (Google Forms)</a></li>
+                <li><a href="#retention-deletion">Data Retention and Deleting Your Data</a></li>
+                <li><a href="#security">Data Security</a></li>
+                <li><a href="#children">Age Restriction and Children’s Privacy</a></li>
+                <li><a href="#your-rights">Your Privacy Rights</a></li>
+                <li><a href="#changes">Changes to This Policy</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ol>
+        </nav>
+        <section id="who-we-are">
+            <h2>1. Who We Are and What This Policy Covers</h2>
+            <p>This Privacy Policy explains how <strong>FunAdda</strong> (the &ldquo;App&rdquo;, &ldquo;we&rdquo;,
+                &ldquo;us&rdquo;, or &ldquo;our&rdquo;) handles information when you use it. The App is a collection of
+                party games for Android (Truth or Dare, Charades, Would You Rather, Truth or Bluff, and Never Have I
+                Ever), published by CoderMadhuresh
+                (the &ldquo;Developer&rdquo;).</p>
+            <p>This policy applies to the FunAdda Android app (package name <code>com.madhuresh.funadda</code>) and to
+                this page. By using the App you acknowledge this policy. If you do not agree with it, please do not use
+                the App.</p>
+            <p>Contact: codermadhuresh1234@gmail.com</p>
+        </section>
+        <section id="what-we-dont-collect">
+            <h2>2. Information We Do Not Collect</h2>
+            <p>FunAdda is designed to work without collecting personal data. We do <strong>not</strong> collect,
+                request, store on our servers, or receive any of the following:</p>
+            <ul>
+                <li>Your name, email address, phone number, postal address, or any account details (the App has no
+                    accounts or sign-in)</li>
+                <li>Precise or approximate location</li>
+                <li>IP address, advertising ID, device identifiers, or device fingerprints</li>
+                <li>Contacts, calendar, photos, videos, files, or audio recordings</li>
+                <li>Camera or microphone data (the App does not use them)</li>
+                <li>Payment or financial information (the App has no purchases)</li>
+                <li>Usage analytics, crash reports, or behavioural profiles</li>
+                <li>Chat messages or voice communication between players (the App has no chat)</li>
+            </ul>
+            <p>Because the App does not send data to us, we have no copy of your information and cannot look at it, sell
+                it, or share it.</p>
+        </section>
+        <section id="stored-on-device">
+            <h2>3. Information Stored on Your Device</h2>
+            <p>To make the games convenient, the App saves a small amount of data <strong>locally on your
+                    device</strong> using Android&rsquo;s private app storage (known as
+                &ldquo;SharedPreferences&rdquo;). This data never leaves your device through the App, and other apps
+                cannot normally access it.</p>
+            <div class="tablewrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>What it is</th>
+                            <th>Why it is stored</th>
+                            <th>Where it goes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Player names</td>
+                            <td>Nicknames you type when setting up Truth or Dare, Would You Rather, or Never Have I Ever
+                                (up to 10 characters each)</td>
+                            <td>So you do not have to re-enter your group&rsquo;s names every time</td>
+                            <td>Stays on your device. Delete a name with the delete icon, or clear the App&rsquo;s data.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Audio settings</td>
+                            <td>Whether background music and sound effects are turned on or off</td>
+                            <td>To remember your preference</td>
+                            <td>Stays on your device</td>
+                        </tr>
+                        <tr>
+                            <td>Temporary game state</td>
+                            <td>Selected game mode, category, timer, turn order, scores, and any word you type during a
+                                round (for example in Truth or Bluff)</td>
+                            <td>To run the current game</td>
+                            <td>Held in memory only and discarded when the game or App closes. Not saved to storage.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>A tip:</strong> player names are only labels. Please use nicknames, and avoid entering full
+                names, phone numbers, or other sensitive information into name fields.</p>
+        </section>
+        <section id="multiplayer">
+            <h2>4. Multiplayer and Gameplay</h2>
+            <p>FunAdda&rsquo;s multiplayer is <strong>local, same-device play</strong>: friends take turns using one
+                phone or tablet. The App does not include online matchmaking, lobbies, accounts, friend lists, or chat,
+                and it does not send gameplay data over the internet.</p>
+            <p>If we ever add online features, we will update this policy <em>before</em> they are released and tell you
+                what data they use (for example, any network identifiers) and why.</p>
+        </section>
+        <section id="sensors-permissions">
+            <h2>5. Device Sensors, Permissions and Internet Access</h2>
+            <p><strong>Motion sensor (accelerometer).</strong> In Charades, the App reads your device&rsquo;s motion
+                sensor to detect when you lift and tilt the phone, so a round can start hands-free. These readings are
+                processed instantly on your device to trigger the game action. They are not recorded, stored, or
+                transmitted. This sensor does not require a permission prompt on Android.</p>
+            <p><strong>Internet permission.</strong> Playing the games does not require an internet connection. The App
+                requests internet access only so that a small number of optional features work: opening the &ldquo;Share
+                App&rdquo; sheet, opening the App&rsquo;s Google Play listing from &ldquo;Rate Us&rdquo;, opening the
+                feedback form described below, and opening this Privacy Policy and the Terms &amp; Conditions from
+                within the App. These features only use the internet at the moment you tap them; the App does not
+                otherwise send data over the internet in the background.</p>
+            <p><strong>Other permissions.</strong> The App does not request access to your location, camera, microphone,
+                contacts, photos, files, or phone.</p>
+        </section>
+        <section id="third-parties">
+            <h2>6. Third-Party Services and SDKs</h2>
+            <p>FunAdda does <strong>not</strong> include any third-party advertising, analytics, crash-reporting,
+                social-login, attribution, or payment SDKs. The App is built with standard open-source Android and
+                Jetpack libraries, which run locally on your device and do not send data to us.</p>
+            <p>A few things you may choose to do involve other services, which have their own privacy practices:</p>
+            <ul>
+                <li><strong>Google Play.</strong> You download and update the App through Google Play. Google handles
+                    that relationship under the <a href="https://policies.google.com/privacy" rel="noopener">Google
+                        Privacy Policy</a> and Google Play Terms. We do not receive your personal details from Google.
+                </li>
+                <li><strong>Android backup.</strong> If you have Android backup turned on, Android may include the
+                    App&rsquo;s saved data (such as player names and audio settings) in your device backup to your
+                    Google Account. This is handled by Google and your device settings, not by us. You can turn it off
+                    in your device&rsquo;s system settings.</li>
+                <li><strong>Share App.</strong> Opens your device&rsquo;s share sheet so you can send a link to the App.
+                    What you share, and with whom, is your choice.</li>
+                <li><strong>Rate Us.</strong> Opens the App&rsquo;s page on Google Play.</li>
+                <li><strong>Feedback form.</strong> Opens a Google Form in your browser, hosted by Google under the <a
+                        href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>. See
+                    &ldquo;Feedback (Google Forms)&rdquo; below.</li>
+                <li><strong>Privacy Policy and Terms links.</strong> Open this website in your browser.</li>
+            </ul>
+        </section>
+        <section id="feedback">
+            <h2>7. Feedback (Google Forms)</h2>
+            <p>The App has an optional &ldquo;Feedback&rdquo; link that opens a <strong>Google Form</strong> in your
+                browser. Filling it in is entirely your choice &mdash; you can close it without submitting anything, and
+                the App works exactly the same either way.</p>
+            <p>If you choose to submit the form, you decide what to include. The form does not necessarily require your
+                name, email,
+                or any other personal detail; you may share them voluntarily, for example if you want us to reply to
+                you. Responses are collected and stored by Google, and are governed by the <a
+                    href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a> in addition to
+                this policy. We access the responses to read feedback, fix problems, and improve the App. We do not sell
+                your responses, use them for advertising, or combine them with any other data.</p>
+            <p>We keep form responses only as long as needed to consider your feedback and for reasonable
+                record-keeping, and you can ask us to delete any response you identify as yours by writing to
+                codermadhuresh1234@gmail.com.</p>
+            <p>Please do not include sensitive personal information (such as government ID numbers, financial details,
+                or health information) in your feedback.</p>
+            <p>You may also contact us directly by email at codermadhuresh1234@gmail.com;
+                the same principles apply to what you send us that way.</p>
+        </section>
+        <section id="retention-deletion">
+            <h2>8. Data Retention and Deleting Your Data</h2>
+            <p>Because everything the App saves is on your device, <strong>you control it</strong>:</p>
+            <ul>
+                <li><strong>Remove a player name:</strong> tap the delete icon next to the name in the player list.</li>
+                <li><strong>Delete everything the App has saved:</strong> on Android go to Settings &rarr; Apps &rarr;
+                    FunAdda &rarr; Storage &rarr; Clear data (wording varies by device), or uninstall the App.</li>
+                <li><strong>Backups:</strong> if you use Android backup, remove the App&rsquo;s backup from your Google
+                    Account settings.</li>
+            </ul>
+            <p>The App has no user accounts, so there is no account to delete and no server-side gameplay data for us to
+                erase. For any feedback you sent us, see &ldquo;Feedback and Contacting Us&rdquo; above.</p>
+        </section>
+        <section id="security">
+            <h2>9. Data Security</h2>
+            <p>The App keeps its data in Android&rsquo;s private app storage and does not transmit it, which greatly
+                limits exposure. No method of storage is perfectly secure, and the safety of the data on your device
+                also depends on your device&rsquo;s own protections (screen lock, OS updates, and so on).</p>
+        </section>
+        <section id="children">
+            <h2>10. Age Restriction and Children’s Privacy</h2>
+            <p><strong>FunAdda is an 18+ app.</strong> It contains mature, suggestive, and adult-themed content
+                throughout (see the <a href="terms-and-conditions.html">Terms &amp; Conditions</a>) and is not intended
+                for anyone under 18
+                years old, or the age of majority where you live if that is higher. We do not knowingly allow anyone
+                under that age to use the App, and we do not knowingly collect personal information from children.</p>
+            <p>The App has no accounts, ads, tracking, or chat, so in the ordinary course of use it does not collect
+                personal information from children under 13 (COPPA, United States), under 16 (GDPR, European Union and
+                United Kingdom, where the local age of digital consent may be lower), or under 18 (India&rsquo;s Digital
+                Personal Data Protection Act, 2023), or otherwise. The optional Google Form described below is intended
+                for adult users who choose to send feedback.</p>
+            <p>If you believe a child has used the App or sent us personal information through email or the feedback
+                form, contact codermadhuresh1234@gmail.com and we will delete any such
+                information promptly and take appropriate steps.</p>
+        </section>
+        <section id="your-rights">
+            <h2>11. Your Privacy Rights</h2>
+            <p>Depending on where you live (for example under the EU/UK GDPR, the California Consumer Privacy Act as
+                amended (CCPA/CPRA), India&rsquo;s DPDP Act, Brazil&rsquo;s LGPD, or Canada&rsquo;s PIPEDA), you may
+                have rights to access, correct, delete, or port your personal data, to object to or restrict its
+                processing, and to withdraw consent.</p>
+            <p>Since the App does not collect or hold personal data about you, there is generally nothing for us to
+                provide or delete beyond any feedback you sent us. Data saved on your device is already in your hands
+                (see &ldquo;Data Retention and Deleting Your Data&rdquo;). To exercise any right regarding feedback you
+                sent us, email codermadhuresh1234@gmail.com. If you are in the EU/UK, you
+                also have the right to lodge a complaint with your local data protection authority.</p>
+            <ul>
+                <li><strong>We do not sell or share personal information</strong> (as those terms are used in California
+                    law), and we do not use it for targeted advertising.</li>
+                <li><strong>We do not use automated decision-making or profiling.</strong></li>
+                <li><strong>International transfers:</strong> the App does not transfer your data anywhere. Feedback
+                    emails you send may be handled by our email provider in the country where it operates.</li>
+                <li><strong>Legal basis (EU/UK):</strong> for feedback you send us, we rely on your consent and our
+                    legitimate interest in supporting and improving the App.</li>
+                <li><strong>Do Not Track:</strong> the App does not track you, so it has nothing to change in response
+                    to Do Not Track signals.</li>
+            </ul>
+        </section>
+        <section id="changes">
+            <h2>12. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time, for example if the App adds features that change how
+                data is handled. The &ldquo;Effective date&rdquo; at the top of this page shows the latest version. For
+                material changes we will update the App&rsquo;s Google Play listing and/or show a notice in the App
+                before the change takes effect. Continued use after an update means you accept the revised policy.</p>
+        </section>
+        <section id="contact">
+            <h2>13. Contact Us</h2>
+            <p>Questions or requests about this Privacy Policy or the App&rsquo;s handling of data:</p>
+            <p><strong>CoderMadhuresh</strong><br>Email: codermadhuresh1234@gmail.com</p>
+            <p>We aim to respond within a reasonable time, generally within 30 days.</p>
+        </section>
+    </main>
+    <footer>&copy; 2026 CoderMadhuresh. FunAdda is
+        an Android app (package name <code>com.madhuresh.funadda</code>).</footer>
+</body>
+
+</html>

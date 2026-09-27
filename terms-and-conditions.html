@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Terms &amp; Conditions | FunAdda</title>
+    <meta name="description"
+        content="FunAdda Terms & Conditions: age requirements, acceptable use, dare disclaimers, and liability.">
+    <meta name="robots" content="index,follow">
+    <!-- BEFORE PUBLISHING: (1) search for "[" and replace every yellow-highlighted placeholder; (2) find and replace YOUR-SITE-NAME with your Google Sites address name. -->
+    <style>
+        :root {
+            --bg: #fbfaff;
+            --surface: #ffffff;
+            --ink: #1b1733;
+            --muted: #5b5678;
+            --line: #e4e0f2;
+            --link: #6a00a8;
+            --accent1: #00c4d0;
+            --accent2: #d000d0;
+            --band: #03000f;
+            --band-ink: #f4f1ff;
+            --note-bg: #f1eeff;
+            --fill-bg: #fff3b0;
+            --fill-ink: #4a3b00
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0b0818;
+                --surface: #120e24;
+                --ink: #ebe8f8;
+                --muted: #a9a3c7;
+                --line: #2a2447;
+                --link: #7fe9f0;
+                --note-bg: #181334;
+                --fill-bg: #5a4a00;
+                --fill-ink: #fff3b0
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #0b0818;
+            --surface: #120e24;
+            --ink: #ebe8f8;
+            --muted: #a9a3c7;
+            --line: #2a2447;
+            --link: #7fe9f0;
+            --note-bg: #181334;
+            --fill-bg: #5a4a00;
+            --fill-ink: #fff3b0
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 1.25rem
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font: 17px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+            -webkit-text-size-adjust: 100%
+        }
+
+        a {
+            color: var(--link);
+            text-underline-offset: 2px
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--accent2);
+            outline-offset: 2px;
+            border-radius: 3px
+        }
+
+        .band {
+            background: var(--band);
+            color: var(--band-ink)
+        }
+
+        .band .in {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 2.25rem 1.25rem 2rem
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: .02em;
+            background: linear-gradient(90deg, #00f5ff, #ff00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block
+        }
+
+        .band h1 {
+            margin: .35rem 0 .5rem;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -.01em
+        }
+
+        .band p {
+            margin: 0;
+            color: #c9c3e6;
+            font-size: .95rem
+        }
+
+        .band .other {
+            margin-top: 1.1rem
+        }
+
+        .band .other a {
+            display: inline-block;
+            padding: .6rem 1.15rem;
+            margin: .25rem .5rem .25rem 0;
+            border: 1px solid rgba(0, 245, 255, .5);
+            border-radius: 999px;
+            background: rgba(0, 245, 255, .1);
+            color: #7fe9f0;
+            font-weight: 700;
+            font-size: .9rem;
+            text-decoration: none;
+            transition: background .15s ease, border-color .15s ease, transform .15s ease
+        }
+
+        .band .other a:hover {
+            background: rgba(0, 245, 255, .2);
+            border-color: var(--accent1)
+        }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem 4rem
+        }
+
+        .summary {
+            background: var(--note-bg);
+            border: 1px solid var(--line);
+            border-left: 5px solid var(--accent2);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 0 0 2rem
+        }
+
+        .summary h2 {
+            margin: .1rem 0 .5rem;
+            font-size: 1.1rem;
+            border: 0;
+            padding: 0
+        }
+
+        .summary ul {
+            margin: .25rem 0 0;
+            padding-left: 1.2rem
+        }
+
+        .summary li {
+            margin: .25rem 0
+        }
+
+        nav.toc {
+            border: 1px solid var(--line);
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 0 0 2.25rem
+        }
+
+        nav.toc h2 {
+            font-size: 1rem;
+            margin: 0 0 .5rem;
+            border: 0;
+            padding: 0
+        }
+
+        nav.toc ol {
+            margin: 0;
+            padding-left: 1.4rem;
+            columns: 2;
+            column-gap: 2rem;
+            font-size: .95rem
+        }
+
+        nav.toc li {
+            margin: .15rem 0;
+            break-inside: avoid
+        }
+
+        @media (max-width:620px) {
+            nav.toc ol {
+                columns: 1
+            }
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            line-height: 1.3;
+            margin: 2.5rem 0 .75rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--line)
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            margin: 1.5rem 0 .4rem
+        }
+
+        p {
+            margin: .65rem 0
+        }
+
+        ul,
+        ol {
+            margin: .6rem 0;
+            padding-left: 1.4rem
+        }
+
+        li {
+            margin: .3rem 0
+        }
+
+        .tablewrap {
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface)
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 560px;
+            font-size: .95rem
+        }
+
+        th,
+        td {
+            text-align: left;
+            vertical-align: top;
+            padding: .65rem .8rem;
+            border-bottom: 1px solid var(--line)
+        }
+
+        th {
+            font-weight: 700;
+            background: var(--note-bg)
+        }
+
+        tr:last-child td {
+            border-bottom: 0
+        }
+
+        .caps {
+            text-transform: none
+        }
+
+        .important {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-left: 5px solid var(--accent1);
+            border-radius: 8px;
+            padding: .85rem 1.1rem;
+            margin: 1rem 0
+        }
+
+        .important p:first-child {
+            margin-top: 0
+        }
+
+        .important p:last-child {
+            margin-bottom: 0
+        }
+
+        mark.fill {
+            background: var(--fill-bg);
+            color: var(--fill-ink);
+            padding: 0 .25em;
+            border-radius: 3px;
+            font-weight: 600
+        }
+
+        footer {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem 3rem;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: .9rem
+        }
+
+        @media print {
+            .band {
+                background: none;
+                color: #000;
+                border: 0
+            }
+
+            .band p,
+            .band .other {
+                color: #000
+            }
+
+            .brand {
+                color: #000;
+                background: none
+            }
+
+            nav.toc {
+                display: none
+            }
+
+            body {
+                font-size: 12pt
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="band">
+        <div class="in">
+            <span class="brand">FunAdda</span>
+            <h1>Terms &amp; Conditions</h1>
+            <p>Effective date: September 20, 2026. Applies to FunAdda version 1.0.0 and later.</p>
+            <p class="other"><a href="index.html">Back to FunAdda home</a><a
+                    href="privacy-policy.html">Read the Privacy Policy</a></p>
+        </div>
+    </header>
+    <main>
+
+        <aside class="summary" aria-label="Summary">
+            <h2>The short version</h2>
+            <ul>
+                <li><strong>FunAdda is for adults aged 18 and over only.</strong> By using the App, you confirm you meet
+                    this age requirement.</li>
+                <li>FunAdda is a free party-game app for fun with friends. Play kindly and respect each other.</li>
+                <li>Truths and dares are just prompts. <strong>You decide what to do, and you are responsible for your
+                        own actions.</strong> Never do anything unsafe, illegal, or that you or others are not
+                    comfortable with. Anyone can skip.</li>
+                <li>The App is provided &ldquo;as is&rdquo;, and the Developer is not liable for what players say or do
+                    while playing.</li>
+            </ul>
+            <p style="margin:.75rem 0 0;font-size:.9rem;color:var(--muted)">This summary is for convenience. The full
+                terms below are what apply.</p>
+        </aside>
+        <nav class="toc" aria-label="Table of contents">
+            <h2>Contents</h2>
+            <ol>
+                <li><a href="#acceptance">Acceptance of These Terms</a></li>
+                <li><a href="#age">Age Requirement (18+) and Mature Content</a></li>
+                <li><a href="#licence">Licence to Use the App</a></li>
+                <li><a href="#about-app">About the App</a></li>
+                <li><a href="#your-inputs">Player Names and Your Inputs</a></li>
+                <li><a href="#conduct">Acceptable Use and Community Guidelines</a></li>
+                <li><a href="#dares-risk">Truth or Dare, Dares and Real-World Activities</a></li>
+                <li><a href="#content-disclaimer">Content Disclaimer and Third-Party Names</a></li>
+                <li><a href="#ip">Intellectual Property</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#availability">Availability, Updates and Changes to the App</a></li>
+                <li><a href="#termination">Suspension and Termination</a></li>
+                <li><a href="#warranty">Disclaimer of Warranties</a></li>
+                <li><a href="#liability">Limitation of Liability</a></li>
+                <li><a href="#indemnity">Indemnity</a></li>
+                <li><a href="#third-party-terms">Third-Party Platforms and Links</a></li>
+                <li><a href="#global">Use Around the World</a></li>
+                <li><a href="#governing-law">Governing Law and Disputes</a></li>
+                <li><a href="#changes">Changes to These Terms</a></li>
+                <li><a href="#general">General</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ol>
+        </nav>
+        <section id="acceptance">
+            <h2>1. Acceptance of These Terms</h2>
+            <p>These Terms &amp; Conditions (the &ldquo;Terms&rdquo;) are a legal agreement between you and
+                CoderMadhuresh (the
+                &ldquo;Developer&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) governing your use of the
+                <strong>FunAdda</strong> Android app (the &ldquo;App&rdquo;).
+            </p>
+            <p>By downloading, installing, or using the App, you confirm that you are at least 18 years old (or the age
+                of majority where you live, if higher) and you agree to these Terms and to our <a
+                    href="privacy-policy.html">Privacy Policy</a>. If you do not meet this age requirement, or do not
+                agree
+                to these Terms, do not download, install, or use the App.</p>
+        </section>
+        <section id="age">
+            <h2>2. Age Requirement (18+) and Mature Content</h2>
+            <h3>The App is for adults only</h3>
+            <p><strong>FunAdda is intended solely for users who are 18 years of age or older</strong> (or the age of
+                majority where you live, if higher). This applies to the whole App and all of its games and modes, not
+                just some of them. The App is not designed, directed at, or intended for use by children.</p>
+            <h3>Mature content</h3>
+            <p>FunAdda&rsquo;s games include mature, suggestive, flirtatious, embarrassing, or otherwise adult-themed
+                prompts and content, including in modes labelled &ldquo;Hot&rdquo;, &ldquo;Couples&rdquo;, and
+                &ldquo;Extreme&rdquo;. By downloading, installing, or using the App you confirm that you are 18 or older
+                and that you consent to seeing this kind of content.</p>
+            <h3>Age is not verified</h3>
+            <p>The App does not verify age. If you are under 18, you must not use the App. Parents and guardians who
+                become aware that a minor has installed or used the App should have it removed from that device.</p>
+        </section>
+        <section id="licence">
+            <h2>3. Licence to Use the App</h2>
+            <p>We grant you a personal, non-exclusive, non-transferable, revocable, royalty-free licence to install and
+                use the App on devices you own or control, for your own non-commercial entertainment, subject to these
+                Terms.</p>
+            <p>You agree that you will not, and will not allow anyone else to (except to the extent the law expressly
+                allows despite this restriction):</p>
+            <ul>
+                <li>copy, modify, translate, or create derivative works of the App or its content</li>
+                <li>reverse engineer, decompile, disassemble, or attempt to extract the source code or the question,
+                    prompt, or word lists</li>
+                <li>sell, rent, lease, sublicense, redistribute, or republish the App or its content, or use it for
+                    commercial purposes (for example, in paid events or broadcasts) without our written permission</li>
+                <li>remove or change any copyright, trademark, or other notices</li>
+                <li>use the App to break any law or third-party right, or interfere with the App&rsquo;s normal
+                    operation</li>
+            </ul>
+        </section>
+        <section id="about-app">
+            <h2>4. About the App</h2>
+            <p>FunAdda offers offline party games (currently Truth or Dare, Charades, Would You Rather, Truth or Bluff,
+                and Never Have I Ever) that friends play together on a single device. The App is currently free. It has
+                no user accounts, no advertising, and no in-app purchases.</p>
+            <p>If we later introduce accounts, online play, ads, or paid features, we will update these Terms and our
+                Privacy Policy first, and any purchases will be processed through Google Play under its payment and
+                refund terms.</p>
+        </section>
+        <section id="your-inputs">
+            <h2>5. Player Names and Your Inputs</h2>
+            <p>The App lets you enter player names and, in some games, words or responses. This information stays on
+                your device and is not sent to us (see the <a href="privacy-policy.html">Privacy Policy</a>).
+                Accordingly, we do not claim ownership of it and do not
+                need a licence to it.</p>
+            <p>You are responsible for what you enter. Do not use names or words that are offensive, hateful, sexually
+                explicit, or that impersonate or disclose personal information about another person without their
+                consent.</p>
+            <p>If you send us feedback, ideas, or suggestions, you agree that we may use them to improve the App without
+                any obligation or payment to you.</p>
+        </section>
+        <section id="conduct">
+            <h2>6. Acceptable Use and Community Guidelines</h2>
+            <p>FunAdda is meant to be played in person by people who are comfortable with one another. When you use the
+                App you agree to:</p>
+            <ul>
+                <li><strong>Be respectful.</strong> No harassment, bullying, threats, humiliation, hate speech, or
+                    discrimination based on race, ethnicity, religion, gender, sexual orientation, disability, or any
+                    other characteristic.</li>
+                <li><strong>Respect consent.</strong> Every player may skip or decline any truth, dare, question, or
+                    activity, at any time and for any reason. Never pressure, coerce, or shame anyone into answering or
+                    performing something.</li>
+                <li><strong>Keep it appropriate.</strong> Do not use the App to create, display, or share sexually
+                    explicit, obscene, or otherwise unlawful content, and do not direct mature content at minors.</li>
+                <li><strong>Protect privacy.</strong> Do not record, photograph, or share other people&rsquo;s answers,
+                    dares, or appearance without their consent.</li>
+                <li><strong>Play fair.</strong> Do not tamper with, exploit, or interfere with the App, or use it in any
+                    way that violates these Terms or applicable law.</li>
+            </ul>
+        </section>
+        <section id="dares-risk">
+            <h2>7. Truth or Dare, Dares and Real-World Activities</h2>
+            <div class="important">
+                <p><strong>Please read this section carefully.</strong></p>
+                <p>The truths, dares, questions, challenges, and words shown in the App are randomly selected prompts
+                    provided for entertainment only. We do not require, supervise, verify, or endorse any prompt or
+                    anything you or other players say or do in response.</p>
+            </div>
+            <ul>
+                <li><strong>You choose what to do.</strong> Performing any dare, task, action, or answer is entirely
+                    voluntary and at your own risk. You alone are responsible for your decisions and conduct and for
+                    those of any children you supervise.</li>
+                <li><strong>Safety first.</strong> Do not do anything dangerous, harmful, illegal, or that could damage
+                    people or property. Do not consume alcohol, drugs, or any substance because of the App, and never
+                    drink and drive. Skip any prompt that makes anyone uncomfortable.</li>
+                <li><strong>Physical activity and surroundings.</strong> Games such as Charades involve moving, acting,
+                    and tilting or holding your device. Play in a safe area, watch your surroundings, and take care not
+                    to drop or damage your device or bump into people or objects.</li>
+                <li><strong>Personal disclosures.</strong> Truths and &ldquo;Never Have I Ever&rdquo; statements may
+                    lead you to share personal information with other players. Share only what you are comfortable with,
+                    and respect what others share with you.</li>
+                <li><strong>No liability for outcomes.</strong> To the fullest extent permitted by law, the Developer is
+                    not responsible or liable for any action, activity, injury, illness, loss, damage, embarrassment,
+                    emotional distress, dispute, relationship difficulty, legal consequence, or other outcome that
+                    arises from any truth, dare, question, prompt, or answer, from any interaction between players, or
+                    from anything a player says or does while using the App.</li>
+            </ul>
+        </section>
+        <section id="content-disclaimer">
+            <h2>8. Content Disclaimer and Third-Party Names</h2>
+            <p>Prompts and word lists in the App are meant to be light-hearted, and may be humorous, cheeky, or
+                embarrassing. They may not suit every person, group, culture, or occasion, and they may contain
+                unintended errors. Use your own judgement about what is appropriate for your group.</p>
+            <p>Some games (such as Charades and Truth or Bluff) include names of movies, songs, celebrities, brands,
+                places, and similar terms purely as gameplay words. All names, trademarks, and logos belong to their
+                respective owners. Their use in the App is for identification within the game only and does not imply
+                any affiliation with, sponsorship by, or endorsement from them.</p>
+        </section>
+        <section id="ip">
+            <h2>9. Intellectual Property</h2>
+            <p>The App, including its software, design, graphics, logo, artwork, audio, prompts, and word lists, and the
+                &ldquo;FunAdda&rdquo; name, is owned by the Developer or its licensors and is protected by copyright,
+                trademark, and other laws. Except for the limited licence in these Terms, we reserve all rights. No
+                rights in our intellectual property are transferred to you.</p>
+            <p>If you believe content in the App infringes your rights, please contact codermadhuresh1234@gmail.com with
+                details, and we will review it promptly.
+            </p>
+        </section>
+        <section id="privacy">
+            <h2>10. Privacy</h2>
+            <p>Your privacy matters to us. Our <a href="privacy-policy.html">Privacy Policy</a> explains
+                what the App does and does not collect, and is part of these Terms.</p>
+        </section>
+        <section id="availability">
+            <h2>11. Availability, Updates and Changes to the App</h2>
+            <p>We may update, modify, add, or remove features or content, or suspend or discontinue the App (in whole or
+                in part), at any time, with or without notice. We are not obliged to provide updates, support, or
+                availability in any particular country or on any particular device. Some updates may be required to keep
+                using the App. Features that use device sensors may behave differently on different devices.</p>
+        </section>
+        <section id="termination">
+            <h2>12. Suspension and Termination</h2>
+            <p>Since the App has no accounts, you can stop using it at any time by uninstalling it. Your licence ends
+                automatically if you breach these Terms. We may also withdraw the licence, restrict access, or stop
+                making the App available if we reasonably believe these Terms are being breached, or for legal or
+                security reasons.</p>
+            <p>If we introduce accounts or online features in the future, we may suspend or terminate access for users
+                who violate these Terms or the Community Guidelines, including for abusing text inputs, harassing
+                others, cheating, or exploiting bugs.</p>
+            <p>Sections that by their nature should continue after termination (including disclaimers, limitation of
+                liability, indemnity, and governing law) will continue to apply.</p>
+        </section>
+        <section id="warranty">
+            <h2>13. Disclaimer of Warranties</h2>
+            <p class="caps">THE APP AND ITS CONTENT ARE PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo;,
+                WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY,
+                FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY, OR THAT THE APP WILL BE UNINTERRUPTED,
+                ERROR-FREE, OR FREE OF HARMFUL COMPONENTS, TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW.</p>
+        </section>
+        <section id="liability">
+            <h2>14. Limitation of Liability</h2>
+            <p class="caps">TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER AND ITS AFFILIATES, AND
+                THEIR RESPECTIVE OWNERS, OFFICERS, AND CONTRACTORS, WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
+                SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF DATA, PROFITS, OR GOODWILL,
+                OR ANY PERSONAL INJURY, PROPERTY DAMAGE, OR EMOTIONAL DISTRESS, ARISING OUT OF OR RELATED TO YOUR USE OF
+                (OR INABILITY TO USE) THE APP OR ANYTHING THAT HAPPENS WHILE PLAYING IT, INCLUDING ANY TRUTH, DARE,
+                ANSWER, OR INTERACTION BETWEEN PLAYERS, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+            <p class="caps">OUR TOTAL LIABILITY FOR ANY CLAIM RELATED TO THE APP WILL NOT EXCEED THE AMOUNT YOU PAID FOR
+                THE APP (WHICH IS ZERO) OR US$1, WHICHEVER IS GREATER.</p>
+            <p>Nothing in these Terms excludes or limits liability that cannot be excluded or limited by law (for
+                example, liability for fraud, or for death or personal injury caused by our negligence, where the law
+                does not allow that to be excluded), or any mandatory consumer rights you have where you live. Some
+                jurisdictions do not allow certain exclusions, so parts of this section may not apply to you.</p>
+        </section>
+        <section id="indemnity">
+            <h2>15. Indemnity</h2>
+            <p>To the extent permitted by law, you agree to defend, indemnify, and hold harmless the Developer from
+                claims, damages, losses, and expenses (including reasonable legal fees) arising out of your breach of
+                these Terms, your misuse of the App, or your acts or omissions while playing, including any dare or
+                activity you perform or encourage others to perform. This does not apply to the extent the law does not
+                allow it, and does not limit your mandatory consumer rights.</p>
+        </section>
+        <section id="third-party-terms">
+            <h2>16. Third-Party Platforms and Links</h2>
+            <p>The App is distributed through Google Play, and your use of Google Play is governed by Google&rsquo;s own
+                terms and policies. Google is not a party to these Terms and is not responsible for the App or for
+                providing support for it. The App may link to third-party websites or services (for example, Google Play
+                or your email app). We do not control them and are not responsible for their content or practices.</p>
+        </section>
+        <section id="global">
+            <h2>17. Use Around the World</h2>
+            <p>The App may be available in many countries. You are responsible for following the laws that apply to you,
+                including any local rules about age limits, content, and conduct. Do not use the App where doing so is
+                prohibited by law.</p>
+        </section>
+        <section id="governing-law">
+            <h2>18. Governing Law and Disputes</h2>
+            <p>These Terms are governed by the laws of India, without
+                regard to conflict-of-law rules. If a dispute arises, please contact us first at
+                codermadhuresh1234@gmail.com so we can try to resolve it informally. If it
+                cannot be resolved, the courts of India will have jurisdiction,
+                except that if you are a consumer, you keep any right you have under mandatory local law to bring a
+                claim in the courts of your country of residence and to rely on the consumer-protection laws there.</p>
+        </section>
+        <section id="changes">
+            <h2>19. Changes to These Terms</h2>
+            <p>We may revise these Terms from time to time. The &ldquo;Effective date&rdquo; at the top of this page
+                shows the latest version. For material changes we will update the App&rsquo;s Google Play listing and/or
+                show a notice in the App. By continuing to use the App after changes take effect, you accept the revised
+                Terms. If you do not agree, stop using the App.</p>
+        </section>
+        <section id="general">
+            <h2>20. General</h2>
+            <p>If any part of these Terms is found unenforceable, the rest remains in effect. Our failure to enforce a
+                right is not a waiver of it. These Terms and the Privacy Policy are the entire agreement between you and
+                us about the App and replace any earlier understanding. You may not transfer your rights under these
+                Terms; we may transfer ours in connection with a sale or reorganisation of the App. If these Terms are
+                translated, the English version prevails where the law allows.</p>
+        </section>
+        <section id="contact">
+            <h2>21. Contact Us</h2>
+            <p>Questions about these Terms, or want to report a concern about the App or its content?</p>
+            <p><strong>CoderMadhuresh</strong><br>Email: codermadhuresh1234@gmail.com</p>
+        </section>
+    </main>
+    <footer>&copy; 2026 CoderMadhuresh. FunAdda is
+        an Android app (package name <code>com.madhuresh.funadda</code>).</footer>
+</body>
+
+</html>
